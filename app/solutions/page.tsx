@@ -1,5 +1,27 @@
+import type { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection';
 import Section from '@/components/Section';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://boyleprint.com';
+
+export const metadata: Metadata = {
+  title: 'Solutions for Creators, Brands & Distributors',
+  description: 'Production solutions built around how you sell. Creator support, distributor programs, eco bag programs, brand launch kits, and fulfillment services for brands, creators, and distributors.',
+  alternates: {
+    canonical: `${baseUrl}/solutions`,
+  },
+  openGraph: {
+    title: 'Solutions for Creators, Brands & Distributors | Boyle Print',
+    description: 'Production solutions built around how you sell. Creator support, distributor programs, eco bag programs, and fulfillment services.',
+    url: `${baseUrl}/solutions`,
+    images: [`${baseUrl}/og-image.png`],
+  },
+  twitter: {
+    title: 'Solutions for Creators, Brands & Distributors | Boyle Print',
+    description: 'Production solutions built around how you sell. Creator support, distributor programs, eco bag programs, and fulfillment services.',
+    images: [`${baseUrl}/og-image.png`],
+  },
+};
 
 export default function Solutions() {
   return (

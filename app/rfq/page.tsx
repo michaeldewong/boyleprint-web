@@ -1,6 +1,32 @@
+import type { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection';
 import Section from '@/components/Section';
 import RfqForm from '@/components/RfqForm';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://boyleprint.com';
+
+export const metadata: Metadata = {
+  title: 'Request a Quote — Fast Response with Options & Pricing',
+  description: 'Submit your RFQ for production printing services. We respond with options, pricing, and timelines. Most quotes returned within 1 business day.',
+  alternates: {
+    canonical: `${baseUrl}/rfq`,
+  },
+  openGraph: {
+    title: 'Request a Quote — Fast Response with Options & Pricing | Boyle Print',
+    description: 'Submit your RFQ for production printing services. We respond with options, pricing, and timelines. Most quotes returned within 1 business day.',
+    url: `${baseUrl}/rfq`,
+    images: [`${baseUrl}/og-image.png`],
+  },
+  twitter: {
+    title: 'Request a Quote — Fast Response with Options & Pricing | Boyle Print',
+    description: 'Submit your RFQ for production printing services. We respond with options, pricing, and timelines. Most quotes returned within 1 business day.',
+    images: [`${baseUrl}/og-image.png`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function Rfq({
   searchParams,

@@ -1,5 +1,27 @@
+import type { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection';
 import Section from '@/components/Section';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://boyleprint.com';
+
+export const metadata: Metadata = {
+  title: 'Production-ready printing for brands, creators, and distributors — made in Los Angeles',
+  description: 'Los Angeles production partner for screen print, embroidery, DTF/DTG, eco bags and custom goods. Fast quoting, reliable quality, and scalable fulfillment from sample to delivery.',
+  alternates: {
+    canonical: baseUrl,
+  },
+  openGraph: {
+    title: 'Production-ready printing for brands, creators, and distributors — made in Los Angeles',
+    description: 'Los Angeles production partner for screen print, embroidery, DTF/DTG, eco bags and custom goods. Fast quoting, reliable quality, and scalable fulfillment.',
+    url: baseUrl,
+    images: [`${baseUrl}/og-image.png`],
+  },
+  twitter: {
+    title: 'Production-ready printing for brands, creators, and distributors — made in Los Angeles',
+    description: 'Los Angeles production partner for screen print, embroidery, DTF/DTG, eco bags and custom goods. Fast quoting, reliable quality, and scalable fulfillment.',
+    images: [`${baseUrl}/og-image.png`],
+  },
+};
 
 export default function Home() {
   return (

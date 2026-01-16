@@ -2,21 +2,29 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Button from '@/components/Button';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://boyleprint.com';
+
 export const metadata: Metadata = {
   title: 'Eco Bags for California Retail Programs | Boyle Print',
   description:
     'Eco-friendly reusable and insulated bags designed to support California retail bag programs—durable materials, consistent branding, practical MOQs, and reliable local production.',
+  alternates: {
+    canonical: `${baseUrl}/products/eco-bags`,
+  },
   openGraph: {
     title: 'Eco Bags for California Retail Programs | Boyle Print',
     description:
       'Eco-friendly reusable and insulated bags designed to support California retail bag programs—durable materials, consistent branding, practical MOQs, and reliable local production.',
     type: 'website',
+    url: `${baseUrl}/products/eco-bags`,
+    images: [`${baseUrl}/og-image.png`],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Eco Bags for California Retail Programs | Boyle Print',
     description:
       'Eco-friendly reusable and insulated bags designed to support California retail bag programs—durable materials, consistent branding, practical MOQs, and reliable local production.',
+    images: [`${baseUrl}/og-image.png`],
   },
 };
 

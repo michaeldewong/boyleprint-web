@@ -1,5 +1,27 @@
+import type { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection';
 import Section from '@/components/Section';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://boyleprint.com';
+
+export const metadata: Metadata = {
+  title: 'Printing Services — DTF/DTG, Screen Print, Embroidery & More',
+  description: 'The right printing method for your project. DTF/DTG, screen printing, heat press, embroidery, file design support, sampling, proofing, and quality control services.',
+  alternates: {
+    canonical: `${baseUrl}/services`,
+  },
+  openGraph: {
+    title: 'Printing Services — DTF/DTG, Screen Print, Embroidery & More | Boyle Print',
+    description: 'The right printing method for your project. DTF/DTG, screen printing, heat press, embroidery, file design support, and quality control.',
+    url: `${baseUrl}/services`,
+    images: [`${baseUrl}/og-image.png`],
+  },
+  twitter: {
+    title: 'Printing Services — DTF/DTG, Screen Print, Embroidery & More | Boyle Print',
+    description: 'The right printing method for your project. DTF/DTG, screen printing, heat press, embroidery, file design support, and quality control.',
+    images: [`${baseUrl}/og-image.png`],
+  },
+};
 
 export default function Services() {
   return (

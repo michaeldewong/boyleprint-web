@@ -1,5 +1,27 @@
+import type { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection';
 import Section from '@/components/Section';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://boyleprint.com';
+
+export const metadata: Metadata = {
+  title: 'Careers — Join Our Production Team in Los Angeles',
+  description: 'Join Boyle Print production team. Clear standards, stable workflow, and growth opportunities. Production, print operator, QC, and sales support roles available.',
+  alternates: {
+    canonical: `${baseUrl}/careers`,
+  },
+  openGraph: {
+    title: 'Careers — Join Our Production Team in Los Angeles | Boyle Print',
+    description: 'Join Boyle Print production team. Clear standards, stable workflow, and growth opportunities. Production roles available.',
+    url: `${baseUrl}/careers`,
+    images: [`${baseUrl}/og-image.png`],
+  },
+  twitter: {
+    title: 'Careers — Join Our Production Team in Los Angeles | Boyle Print',
+    description: 'Join Boyle Print production team. Clear standards, stable workflow, and growth opportunities. Production roles available.',
+    images: [`${baseUrl}/og-image.png`],
+  },
+};
 
 export default function Careers() {
   return (

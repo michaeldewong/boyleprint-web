@@ -1,5 +1,27 @@
+import type { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection';
 import Section from '@/components/Section';
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://boyleprint.com';
+
+export const metadata: Metadata = {
+  title: 'Products — Eco Bags, Insulated Bags, Patches, Apparel & More',
+  description: 'Production-ready products built to sell. Eco bags, insulated bags, patches, printed apparel, stickers, and packaging. Durable, clean branding, made in Los Angeles.',
+  alternates: {
+    canonical: `${baseUrl}/products`,
+  },
+  openGraph: {
+    title: 'Products — Eco Bags, Insulated Bags, Patches, Apparel & More | Boyle Print',
+    description: 'Production-ready products built to sell. Eco bags, insulated bags, patches, printed apparel, stickers, and packaging. Made in Los Angeles.',
+    url: `${baseUrl}/products`,
+    images: [`${baseUrl}/og-image.png`],
+  },
+  twitter: {
+    title: 'Products — Eco Bags, Insulated Bags, Patches, Apparel & More | Boyle Print',
+    description: 'Production-ready products built to sell. Eco bags, insulated bags, patches, printed apparel, stickers, and packaging. Made in Los Angeles.',
+    images: [`${baseUrl}/og-image.png`],
+  },
+};
 
 export default function Products() {
   return (
