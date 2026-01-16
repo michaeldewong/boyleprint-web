@@ -5,20 +5,20 @@ import Section from '@/components/Section';
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://boyleprint.com';
 
 export const metadata: Metadata = {
-  title: 'Production-ready printing for brands, creators, and distributors — made in Los Angeles',
-  description: 'Los Angeles production partner for screen print, embroidery, DTF/DTG, eco bags and custom goods. Fast quoting, reliable quality, and scalable fulfillment from sample to delivery.',
+  title: 'Custom Printing & Manufacturing for Brands and Distributors — Made in Los Angeles',
+  description: 'B2B custom printing and manufacturing partner in Los Angeles. Bulk orders, wholesale fulfillment, and production-ready goods for brands and distributors. Reliable scale, consistent quality, and repeatable processes.',
   alternates: {
     canonical: baseUrl,
   },
   openGraph: {
-    title: 'Production-ready printing for brands, creators, and distributors — made in Los Angeles',
-    description: 'Los Angeles production partner for screen print, embroidery, DTF/DTG, eco bags and custom goods. Fast quoting, reliable quality, and scalable fulfillment.',
+    title: 'Custom Printing & Manufacturing for Brands and Distributors — Made in Los Angeles',
+    description: 'B2B custom printing and manufacturing partner in Los Angeles. Bulk orders, wholesale fulfillment, and production-ready goods for brands and distributors. Reliable scale, consistent quality, and repeatable processes.',
     url: baseUrl,
     images: [`${baseUrl}/og-image.png`],
   },
   twitter: {
-    title: 'Production-ready printing for brands, creators, and distributors — made in Los Angeles',
-    description: 'Los Angeles production partner for screen print, embroidery, DTF/DTG, eco bags and custom goods. Fast quoting, reliable quality, and scalable fulfillment.',
+    title: 'Custom Printing & Manufacturing for Brands and Distributors — Made in Los Angeles',
+    description: 'B2B custom printing and manufacturing partner in Los Angeles. Bulk orders, wholesale fulfillment, and production-ready goods for brands and distributors. Reliable scale, consistent quality, and repeatable processes.',
     images: [`${baseUrl}/og-image.png`],
   },
 };
@@ -28,43 +28,43 @@ export default function Home() {
     <>
       <HeroSection
         id="hero"
-        title="Production-ready printing for brands, creators, and distributors — made in Los Angeles."
-        subtitle="Fast quoting, reliable quality, and a partner mindset from sample to delivery."
+        title="Production-ready custom printing & manufacturing for brands and distributors — made in Los Angeles."
+        subtitle="Bulk orders, wholesale fulfillment, and repeatable production for brands, distributors, and procurement teams. Reliable scale, consistent quality, and logistics-ready delivery."
         ctaText="Request a Quote"
         ctaLink="/rfq"
       />
 
       <Section
-        id="who-we-serve"
-        title="Creators & independent brands, promo distributors, events, and corporate teams."
-        description="From 50 pcs to 50,000 pcs — we scale with you."
-        ctaText="See Solutions"
-        ctaLink="/solutions"
+        id="production-capabilities"
+        title="Production Capabilities"
+        description="Screen print, embroidery, DTF/DTG, and custom manufacturing with quality control, scalable capacity, and consistent output. Built for repeat orders and long-term production partnerships."
+        ctaText="View Capabilities"
+        ctaLink="/services"
       />
 
       <Section
-        id="what-we-make"
-        title="Eco bags • Insulated bags • Patches • Printed apparel • Stickers & packaging."
-        description="Built for retail, events, and resale."
-        ctaText="Browse Products"
+        id="bulk-wholesale-orders"
+        title="Bulk & Wholesale Orders"
+        description="Eco bags, insulated bags, patches, printed apparel, stickers, and packaging. Flexible MOQs, volume pricing, and production runs from 50 to 50,000+ units. Built for wholesale, retail, and promotional programs."
+        ctaText="View Products"
         ctaLink="/products"
         variant="gray"
       />
 
       <Section
-        id="services-overview"
-        title="DTF/DTG • Screen print • Embroidery • Heat press • Laser/engraving (as needed)."
-        description="We help pick the right method based on fabric, qty, budget, and deadline."
-        ctaText="View Services"
-        ctaLink="/services"
+        id="reliable-manufacturing-partner"
+        title="Reliable Manufacturing Partner"
+        description="LA-based production with transparent workflows, quality control checkpoints, and predictable lead times. Designed for procurement teams who need consistency, repeatability, and logistics-ready fulfillment."
+        ctaText="View Solutions"
+        ctaLink="/solutions"
       />
 
       <Section
-        id="creator-support"
-        title="We support artists and small brands with clear guidance, repeatable specs, and fair processes."
-        description="Bring your art — we'll help you turn it into production."
-        ctaText="Explore Creator Support"
-        ctaLink="/solutions#creator-support"
+        id="use-cases"
+        title="Use Cases: Wholesale, Promotional, and Brand Programs"
+        description="Wholesale fulfillment for distributors, promotional orders for corporate programs, and custom manufacturing for brand launches. Repeat order support, SKU consistency, and scalable production capacity."
+        ctaText="View Solutions"
+        ctaLink="/solutions"
         variant="gray"
       />
 
@@ -77,18 +77,18 @@ export default function Home() {
       />
 
       <Section
-        id="trust-signals"
-        title="LA-based production • Transparent workflow • Quality checks • Clear timelines."
-        description="We communicate like a partner — no guessing, no surprises."
-        ctaText="Get a Quote"
+        id="lead-time-fulfillment"
+        title="Lead Time & Fulfillment Reliability"
+        description="Most quotes returned within 1 business day. Production timelines aligned to your launch dates. Quality control checkpoints and logistics-ready packaging for direct-to-store or warehouse delivery."
+        ctaText="Request a Quote"
         ctaLink="/rfq"
         variant="gray"
       />
 
       <Section
         id="process"
-        title="1) RFQ  2) Proof & sample  3) Production  4) QC  5) Shipping / pickup."
-        description="Most quotes returned within 1 business day."
+        title="Production Process: RFQ → Proof & Sample → Production → QC → Shipping / Pickup"
+        description="Streamlined workflow for procurement teams. Clear specifications, sample approvals, production tracking, quality control, and logistics coordination. Most quotes returned within 1 business day."
         ctaText="Start RFQ"
         ctaLink="/rfq"
       />

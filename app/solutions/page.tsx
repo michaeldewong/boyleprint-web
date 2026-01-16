@@ -5,20 +5,20 @@ import Section from '@/components/Section';
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://boyleprint.com';
 
 export const metadata: Metadata = {
-  title: 'Solutions for Creators, Brands & Distributors',
-  description: 'Production solutions built around how you sell. Creator support, distributor programs, eco bag programs, brand launch kits, and fulfillment services for brands, creators, and distributors.',
+  title: 'B2B Manufacturing Solutions for Brands & Distributors',
+  description: 'Production solutions for brand launches, wholesale fulfillment, promotional orders, and custom manufacturing programs. Repeatable processes, consistent quality, and logistics-ready delivery for procurement teams.',
   alternates: {
     canonical: `${baseUrl}/solutions`,
   },
   openGraph: {
-    title: 'Solutions for Creators, Brands & Distributors | Boyle Print',
-    description: 'Production solutions built around how you sell. Creator support, distributor programs, eco bag programs, and fulfillment services.',
+    title: 'B2B Manufacturing Solutions for Brands & Distributors | Boyle Print',
+    description: 'Production solutions for brand launches, wholesale fulfillment, promotional orders, and custom manufacturing programs. Repeatable processes, consistent quality, and logistics-ready delivery.',
     url: `${baseUrl}/solutions`,
     images: [`${baseUrl}/og-image.png`],
   },
   twitter: {
-    title: 'Solutions for Creators, Brands & Distributors | Boyle Print',
-    description: 'Production solutions built around how you sell. Creator support, distributor programs, eco bag programs, and fulfillment services.',
+    title: 'B2B Manufacturing Solutions for Brands & Distributors | Boyle Print',
+    description: 'Production solutions for brand launches, wholesale fulfillment, promotional orders, and custom manufacturing programs. Repeatable processes, consistent quality, and logistics-ready delivery.',
     images: [`${baseUrl}/og-image.png`],
   },
 };
@@ -28,49 +28,44 @@ export default function Solutions() {
     <>
       <HeroSection
         id="hero"
-        title="Solutions built around how you sell: creators, brands, and distributors."
-        subtitle=""
+        title="B2B Manufacturing Solutions for Brands and Distributors"
+        subtitle="Production programs designed for procurement teams, wholesale operations, and repeat order fulfillment. Consistent quality, scalable capacity, and logistics-ready delivery."
         ctaText="Request a Quote"
         ctaLink="/rfq"
       />
 
       <Section
-        id="solutions-creator-support"
-        title="For Artists & Independent Brands / Emerging Brands / Small Studios (pick one)."
-        description="We help you choose the right method, prep files, and build repeatable SKUs."
-        ctaText="Talk to Us"
-        ctaLink="/contact"
+        id="brand-launch-scaling"
+        title="Brand Launch & Scaling"
+        description="Production support for new brand launches and scaling operations. Repeatable SKU specifications, consistent quality across production runs, and scalable capacity for growth. Suitable for emerging brands and established companies expanding product lines."
+        ctaText="View Services"
+        ctaLink="/services"
       />
 
       <Section
-        id="solutions-distributor"
-        title="Reliable production partner for resellers: consistent quality, predictable lead times, scalable capacity."
-        ctaText="Get Distributor Quote"
+        id="distributor-wholesale-fulfillment"
+        title="Distributor & Wholesale Fulfillment"
+        description="Reliable production partner for resellers and wholesale operations. Consistent quality across repeat orders, predictable lead times, scalable capacity, and logistics-ready packaging. Built for procurement teams managing ongoing supplier relationships."
+        ctaText="Request a Quote"
         ctaLink="/rfq"
         variant="gray"
       />
 
       <Section
-        id="solutions-eco-bag-program"
-        title="Eco bags and insulated bags designed for modern compliance and customer expectations."
-        description="Material options, print methods, and packaging guidance included."
-        ctaText="Explore Eco Bags"
-        ctaLink="/products#products-eco-bags"
+        id="promotional-corporate-orders"
+        title="Promotional & Corporate Orders"
+        description="Bulk production for promotional programs, corporate events, and branded merchandise. Flexible order volumes, volume pricing, and fulfillment options including kitting, labeling, and direct-to-location delivery. Suitable for procurement teams managing corporate programs."
+        ctaText="View Products"
+        ctaLink="/products"
       />
 
       <Section
-        id="solutions-brand-launch-kits"
-        title="Starter kits for new launches: bags + patches + labels + packaging, bundled and ready."
-        ctaText="Build a Kit"
-        ctaLink="/rfq"
-        variant="gray"
-      />
-
-      <Section
-        id="solutions-fulfillment-kitting"
-        title="Kitting, labeling, and pack-out support for campaigns and drops (when needed)."
-        ctaText="Ask About Fulfillment"
+        id="custom-manufacturing-programs"
+        title="Custom Manufacturing Programs"
+        description="Custom production programs for specialized requirements, compliance needs, and long-term manufacturing partnerships. Eco bag programs, custom product development, and repeat order support with consistent specifications and quality control."
+        ctaText="Contact Us"
         ctaLink="/contact"
+        variant="gray"
       />
     </>
   );
