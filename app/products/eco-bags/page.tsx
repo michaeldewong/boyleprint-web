@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Button from '@/components/Button';
 
 export const metadata: Metadata = {
@@ -105,6 +106,14 @@ export default function EcoBags() {
               </p>
             </div>
           </div>
+          <div className="mt-6 text-center">
+            <Link
+              href="/rfq"
+              className="text-sm text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center"
+            >
+              Get pricing & lead times →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -165,6 +174,9 @@ export default function EcoBags() {
                 <Button href="/rfq" variant="primary" className="w-full">
                   Start RFQ
                 </Button>
+                <p className="text-sm text-slate-500 mt-3 text-center">
+                  Typical quotes returned within 1 business day.
+                </p>
               </div>
             </div>
 
@@ -206,6 +218,9 @@ export default function EcoBags() {
                 <Button href="/rfq" variant="primary" className="w-full">
                   Start RFQ
                 </Button>
+                <p className="text-sm text-slate-500 mt-3 text-center">
+                  Typical quotes returned within 1 business day.
+                </p>
               </div>
             </div>
           </div>
@@ -297,6 +312,11 @@ export default function EcoBags() {
                 </div>
               </div>
             </div>
+            <div className="mt-8 text-center">
+              <Button href="/rfq?product=eco-bags" variant="primary">
+                Start RFQ with these specs
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -369,6 +389,9 @@ export default function EcoBags() {
             <Button href="/rfq" variant="ghost" className="bg-white text-slate-900 hover:bg-slate-100 border-white">
               Start an RFQ — we&apos;ll reply with pricing and timelines.
             </Button>
+            <p className="text-sm text-slate-400 mt-4">
+              No obligation. We&apos;ll review your specs and reply with options and timelines.
+            </p>
           </div>
         </div>
       </section>
