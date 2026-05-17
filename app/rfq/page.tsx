@@ -1,25 +1,30 @@
 import type { Metadata } from 'next';
-import HeroSection from '@/components/HeroSection';
-import Section from '@/components/Section';
+import RfqHero from '@/components/RfqHero';
+import RfqQuoteBanner from '@/components/RfqQuoteBanner';
+import RfqWhatToHaveReady from '@/components/RfqWhatToHaveReady';
 import RfqForm from '@/components/RfqForm';
+import OrderTermsCollapsible from '@/components/OrderTermsCollapsible';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://boyleprint.com';
 
+const pageTitle = 'Request a Quote | Boyle Print';
+const pageDescription = `Boyle Print quotes projects by scope, decoration method, quantity, and turnaround. Share the basics below and we'll typically respond within one business day with a quote, recommended approach, and any clarifying questions.`;
+
 export const metadata: Metadata = {
-  title: 'Request a Quote — Fast Response with Options & Pricing',
-  description: 'Submit your RFQ for production printing services. We respond with options, pricing, and timelines. Most quotes returned within 1 business day.',
+  title: pageTitle,
+  description: pageDescription,
   alternates: {
     canonical: `${baseUrl}/rfq`,
   },
   openGraph: {
-    title: 'Request a Quote — Fast Response with Options & Pricing | Boyle Print',
-    description: 'Submit your RFQ for production printing services. We respond with options, pricing, and timelines. Most quotes returned within 1 business day.',
+    title: pageTitle,
+    description: pageDescription,
     url: `${baseUrl}/rfq`,
     images: [`${baseUrl}/og-image.png`],
   },
   twitter: {
-    title: 'Request a Quote — Fast Response with Options & Pricing | Boyle Print',
-    description: 'Submit your RFQ for production printing services. We respond with options, pricing, and timelines. Most quotes returned within 1 business day.',
+    title: pageTitle,
+    description: pageDescription,
     images: [`${baseUrl}/og-image.png`],
   },
   robots: {
@@ -28,49 +33,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Rfq({
-  searchParams,
-}: {
-  searchParams: { product?: string };
-}) {
-  const initialProduct =
-    searchParams?.product === 'eco-bags' ? 'Eco Bags' : undefined;
-
+export default function RfqPage() {
   return (
     <>
-      <HeroSection
-        id="hero"
-        title="Request a quote — we respond with options, pricing, and timelines."
-        subtitle=""
-        ctaText="Start RFQ"
-        ctaLink="#rfq-form"
-      />
-
-      <section id="rfq-form" className="bg-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">
-              Name, Company, Email, Phone, Product type, Qty, Method, Deadline, Notes, Upload artwork.
-            </h2>
-            <RfqForm initialProduct={initialProduct} />
-          </div>
+      <RfqHero />
+      <RfqQuoteBanner />
+      <RfqWhatToHaveReady />
+      <section
+        id="rfq-order-intake"
+        className="bg-stone-50 border-b border-slate-200 py-14 md:py-20"
+        aria-label="Quote request form"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <RfqForm />
         </div>
       </section>
-
-      <Section
-        id="what-to-prepare"
-        title="Quantity + target date + logo/artwork + preferred material (if any)."
-        ctaText="Upload Files"
-        ctaLink="#rfq-form"
-        variant="gray"
-      />
-
-      <Section
-        id="response-time"
-        title="Most quotes within 1 business day. Rush options available when possible."
-        ctaText="Book a Call"
-        ctaLink="/contact"
-      />
+      <OrderTermsCollapsible />
     </>
   );
 }

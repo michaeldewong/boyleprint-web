@@ -1,67 +1,89 @@
 import type { Metadata } from 'next';
-import HeroSection from '@/components/HeroSection';
-import Section from '@/components/Section';
-
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://boyleprint.com';
+import Link from 'next/link';
+import PageHero from '@/components/PageHero';
+import PageCtaBand from '@/components/PageCtaBand';
 
 export const metadata: Metadata = {
-  title: 'Printing Services — DTF/DTG, Screen Print, Embroidery & More',
-  description: 'The right printing method for your project. DTF/DTG, screen printing, heat press, embroidery, file design support, sampling, proofing, and quality control services.',
-  alternates: {
-    canonical: `${baseUrl}/services`,
-  },
-  openGraph: {
-    title: 'Printing Services — DTF/DTG, Screen Print, Embroidery & More | Boyle Print',
-    description: 'The right printing method for your project. DTF/DTG, screen printing, heat press, embroidery, file design support, and quality control.',
-    url: `${baseUrl}/services`,
-    images: [`${baseUrl}/og-image.png`],
-  },
-  twitter: {
-    title: 'Printing Services — DTF/DTG, Screen Print, Embroidery & More | Boyle Print',
-    description: 'The right printing method for your project. DTF/DTG, screen printing, heat press, embroidery, file design support, and quality control.',
-    images: [`${baseUrl}/og-image.png`],
-  },
+  title: 'Services | Boyle Print',
+  description:
+    'Contract decoration, sample runs, brand drop preparation, relabeling, kitting, and fulfillment services from Boyle Print in Los Angeles.',
 };
 
-export default function Services() {
+const services = [
+  {
+    title: 'Contract Decoration',
+    body: 'Decoration support for apparel, promotional products, samples, and small-batch distributor orders. Methods include DTF transfer, UV transfer, heat press, laser, patch application, screen print (coordinated production), and embroidery (coordinated production).',
+    learnMore: '/services/contract-decoration',
+  },
+  {
+    title: 'Sample & Prototype Runs',
+    body: 'Pre-production samples for brand approval, distributor presentations, and concept testing. Sample fees may be credited toward production on qualifying orders.',
+  },
+  {
+    title: 'Brand Drop Preparation',
+    body: 'Decoration, labeling, hangtag application, photography support, and small-batch packing for independent brand drops, archive sales, and limited releases.',
+  },
+  {
+    title: 'Relabeling & Hangtags',
+    body: 'Neck label, size label, hangtag, barcode, and SKU sticker application for brand finishing and distributor-managed programs.',
+  },
+  {
+    title: 'Kitting & Packing',
+    body: 'Folding, poly bagging, insert cards, SKU organization, and custom kit preparation for promotional projects, event programs, and brand drops.',
+  },
+  {
+    title: 'Fulfillment & Blind Drop-Ship',
+    body: 'Neutral packing, distributor-branded packing slips, and West Coast shipment preparation. Drop-ship support available for distributor projects upon request.',
+  },
+] as const;
+
+export default function ServicesPage() {
   return (
     <>
-      <HeroSection
-        id="hero"
-        title="The right method for the right job — quality first, deadlines respected."
-        subtitle=""
-        ctaText="Request a Quote"
-        ctaLink="/rfq"
-      />
+      <PageHero eyebrow="SERVICES" headline="Boyle Print Services">
+        <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-[70ch]">
+          Boyle Print provides decoration and production support services for distributors, brands,
+          local businesses, and creators across Los Angeles and Southern California. Each service can
+          be quoted as part of a full project or as a stand-alone module.
+        </p>
+      </PageHero>
 
-      <Section
-        id="services-printing-methods"
-        title="DTF/DTG, screen printing, heat press, embroidery, and special finishes when needed."
-        ctaText="Discuss Your Project"
-        ctaLink="/contact"
-      />
+      <section className="bg-white border-b border-slate-200 py-14 md:py-20" aria-labelledby="what-we-offer-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="what-we-offer-heading" className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight mb-10 md:mb-12">
+            What We Offer
+          </h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {services.map((service) => (
+              <li
+                key={service.title}
+                className="flex flex-col h-full rounded-lg border border-slate-200 bg-slate-50/60 p-6 md:p-7 shadow-sm"
+              >
+                <h3 className="text-lg font-bold text-slate-900 mb-3">{service.title}</h3>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed flex-1 mb-5">{service.body}</p>
+                <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
+                  {'learnMore' in service && service.learnMore && (
+                    <Link
+                      href={service.learnMore}
+                      className="text-slate-900 underline-offset-4 hover:underline"
+                    >
+                      Learn More →
+                    </Link>
+                  )}
+                  <Link href="/rfq" className="text-slate-900 underline-offset-4 hover:underline">
+                    Request a Quote →
+                  </Link>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-      <Section
-        id="services-file-design-support"
-        title="We'll help you prep artwork for production and avoid expensive mistakes."
-        ctaText="Upload Artwork"
-        ctaLink="/rfq"
-        variant="gray"
-      />
-
-      <Section
-        id="services-sampling-proofing"
-        title="Sample first when it matters. Clear approvals before production."
-        ctaText="Request Samples"
-        ctaLink="/contact"
-      />
-
-      <Section
-        id="services-quality-control"
-        title="Process checks and final QC to keep results consistent."
-        ctaText="See Our Process"
-        ctaLink="/#process"
-        variant="gray"
+      <PageCtaBand
+        headline="Have a project in mind?"
+        body={`Send us your project details and we'll come back with options, pricing, and a recommended approach.`}
+        buttonLabel="Request a Quote →"
       />
     </>
   );
